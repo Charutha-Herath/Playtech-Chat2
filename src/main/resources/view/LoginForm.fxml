@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="root" prefHeight="487.0" prefWidth="468.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller.LoginFormController">
+    <children>
+      <AnchorPane layoutX="1.0" layoutY="1.0" prefHeight="486.0" prefWidth="472.0" style="-fx-background-color: #90CAF9; -fx-background-radius: 15;">
+         <children>
+              <AnchorPane layoutX="66.0" layoutY="16.0" opacity="0.79" prefHeight="404.0" prefWidth="342.0" style="-fx-background-color: #212121; -fx-background-radius: 15;">
+                  <children>
+                      <Label layoutX="135.0" layoutY="42.0" text="Login" textFill="WHITE">
+                          <font>
+                              <Font name="Mongolian Baiti" size="35.0" />
+                          </font>
+                      </Label>
+                      <JFXButton fx:id="btnLogin" buttonType="RAISED" layoutX="127.0" layoutY="297.0" onAction="#btnLoginOnAction" prefHeight="34.0" prefWidth="92.0" style="-fx-background-color: #549eec; -fx-background-radius: 20;" text="Login" textFill="#000000c7">
+                          <font>
+                              <Font name="Bookman Old Style Bold" size="18.0" />
+                          </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                      </JFXButton>
+                      <ImageView fitHeight="39.0" fitWidth="40.0" layoutX="19.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                              <Image url="@../img/icons8-user-90.png" />
+                          </image>
+                      </ImageView>
+                      <JFXComboBox fx:id="UsernameCombo" focusColor="#90caf9" layoutX="63.0" layoutY="110.0" onAction="#CmbLoadUsername" prefHeight="45.0" prefWidth="253.0" promptText="Username" style="-fx-text-fill: white; -fx-prompt-text-fill: while;" unFocusColor="#7c7c7c" />
+                      <JFXPasswordField fx:id="TxtLoginPassword" focusColor="#90caf9" layoutX="61.0" layoutY="191.0" prefHeight="45.0" prefWidth="253.0" promptText="Password" style="-fx-text-fill: white;" />
+                      <ImageView fitHeight="39.0" fitWidth="40.0" layoutX="19.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                              <Image url="@../img/icons8-password-90.png" />
+                          </image>
+                      </ImageView>
+                  </children>
+              </AnchorPane>
+         </children></AnchorPane>
+    </children>
+
+</AnchorPane>
