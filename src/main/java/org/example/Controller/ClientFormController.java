@@ -9,6 +9,7 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -34,6 +35,8 @@ public class ClientFormController implements Initializable {
     public javafx.scene.layout.VBox VBox;
     public ImageView imgSelection;
     public Label lblUsername;
+    public ScrollPane idScroll;
+    public HBox hBox;
     private Client client;
 
     public ClientFormController() {
@@ -106,17 +109,24 @@ public class ClientFormController implements Initializable {
         label.setStyle("-fx-background-color: #B3E5FC;-fx-background-radius: 15;-fx-font-size: 18;-fx-font-weight: normal;-fx-text-fill: black;-fx-wrap-text: true;-fx-alignment: center-left;-fx-content-display: left;-fx-padding: 10;-fx-max-width: 350;");
         hBox.getChildren().add(label);
         VBox.getChildren().add(hBox);
+        System.out.println("appendText");
         txtField.clear();
+
+        idScroll.setVvalue(1);
     }
 
     public void writeMsg(String msg) {
         Platform.runLater(() -> {
-            HBox hBox = new HBox();
-            hBox.setStyle("-fx-alignment: center-left;-fx-fill-height: true;-fx-min-height: 50;-fx-pref-width: 520;-fx-max-width: 520;-fx-padding: 10");
-            Label label = new Label(msg);
+            HBox hBox2 = new HBox();
+            hBox2.setStyle("-fx-alignment: center-left;-fx-fill-height: true;-fx-min-height: 50;-fx-pref-width: 520;-fx-max-width: 520;-fx-padding: 10");
+            Label label = new Label(msg+"\n");
             label.setStyle("-fx-background-color: #0277BD;-fx-background-radius: 15;-fx-font-size: 18;-fx-font-weight: normal;-fx-text-fill: black;-fx-wrap-text: true;-fx-alignment: center-left;-fx-content-display: left;-fx-padding: 10;-fx-max-width: 350;");
-            hBox.getChildren().add(label);
-            VBox.getChildren().add(hBox);
+            hBox2.getChildren().add(label);
+            System.out.println("writemsg"+msg);
+            VBox.getChildren().add(hBox2);
+            VBox.layout();
+
+            idScroll.setVvalue(5);
         });
     }
 
